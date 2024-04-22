@@ -38,6 +38,7 @@ type Task struct {
 	GlobalInput    interface{}      `json:"globalInput,omitempty" yaml:"globalInput,omitempty"`
 	Input          interface{}      `json:"input,omitempty" yaml:"input,omitempty" validate:"required"`
 	Output         interface{}      `json:"output,omitempty" yaml:"output,omitempty"`
+	Condition      interface{}      `json:"condition,omitempty" yaml:"condition,omitempty"`
 	Duration       int64            `json:"duration,omitempty" yaml:"duration,omitempty"`
 	LatestDuration int64            `json:"latestDuration,omitempty" yaml:"latestDuration,omitempty"`
 	IsExecuting    bool             `yaml:"isExecuting" json:"isExecuting"`
@@ -45,5 +46,4 @@ type Task struct {
 	NextTaskId     string           `json:"nextTaskId,omitempty" yaml:"nextTaskId,omitempty"`
 	Error          error            `json:"error,omitempty" yaml:"error,omitempty"`
 	Dependencies   map[string]*Task `json:"-" yaml:"-"`
-	// Condition      func(input TaskOutput) bool `json:"-" yaml:"-"`
 }
